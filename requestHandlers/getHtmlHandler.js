@@ -1,4 +1,4 @@
-function getHtml(response) {
+function getHtml(request, response) {
   var body = '<html>'+
     '<head>'+
     '<meta http-equiv="Content-Type" content="text/html; '+
