@@ -1,6 +1,6 @@
 var exec = require('child_process').exec;
 
-function start(response) {
+function start(request, response) {
   console.log('Request handler \'start\' was called.');
 
   // var content = 'empty';
