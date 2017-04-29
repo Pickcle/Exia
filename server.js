@@ -7,20 +7,20 @@ function start(route, handlers) {
 
   http.createServer(function(request, response) {
 
-    if (request.url == '/upload' && request.method.toLowerCase() == 'post') {
-      // parse a file upload
-      var form = new formidable.IncomingForm();
-      form.parse(request, function(err, fields, files) {
-        response.writeHead(200, {'content-type': 'text/plain'});
-        response.write('received upload:\n\n');
-        response.end(util.inspect({fields: fields, files: files}));
-      });
-    } else {
+    // if (request.url == '/show' && request.method.toLowerCase() == 'post') {
+    //   // parse a file upload
+    //   var form = new formidable.IncomingForm();
+    //   form.parse(request, function(err, fields, files) {
+    //     response.writeHead(200, {'content-type': 'text/plain'});
+    //     response.write('received upload:\n\n');
+    //     response.end(util.inspect({fields: fields, files: files}));
+    //   });
+    // } else {
       var pathname = url.parse(request.url).pathname;
       console.log('Request for ' + pathname + ' received.');
 
-      route(pathname, handlers, response);
-    }
+      route(pathname, handlers, request, response);
+    // }
 
   }).listen(8080);
 
