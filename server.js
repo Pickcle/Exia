@@ -22,7 +22,7 @@ function start(route, handlers) {
       route(pathname, handlers, request, response);
     // }
 
-  }).listen(8080);
+  }).listen(6060);
 
   console.log('server started.');
 
