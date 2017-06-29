@@ -1,6 +1,6 @@
-const bufferLen = new Buffer(10)
-const bufferArr = new Buffer([0, 1, 2, 3, 4])
-const bufferStr = new Buffer('abcde')
+var bufferLen = new Buffer(10)
+var bufferArr = new Buffer([0, 1, 2, 3, 4])
+var bufferStr = new Buffer('abcde')
 
 bufferLen.write('abcdefgABCDEFG')
 console.log(bufferLen.toString()) // abcdefgABC
@@ -13,12 +13,12 @@ console.log(bufferLen.toString()) // ab00012345
 
 console.log(bufferArr.toJSON()) // { type: 'Buffer', data: [0, 1, 2, 3, 4]}
 
-const concatBuffer = Buffer.concat([bufferLen, bufferStr])
+var concatBuffer = Buffer.concat([bufferLen, bufferStr])
 console.log(concatBuffer.toString()) // ab00012345abcde
 
 console.log(bufferLen.compare(bufferStr)) // -1
 
-const copyBuffer = new Buffer(4)
+var copyBuffer = new Buffer(4)
 bufferStr.copy(copyBuffer)
 console.log(copyBuffer.toString()) // abcd
 

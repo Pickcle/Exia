@@ -1,4 +1,4 @@
-const path = require('path')
+var path = require('path')
 
 console.log(path.join('root', '/a', 'b'))
 // 将参数串联 => root/a/b
