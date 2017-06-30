@@ -1,4 +1,5 @@
 var fs = require('fs')
+var zlib = require('zlib')
 var file = 'inner-modules/version.txt'
 var input = '1.0.0'
 var data = ''
@@ -15,6 +16,7 @@ readerStream.on('data', function (chunk) {
 readerStream.on('end', function () {
   console.log(data) // version: {{input}}
   writeStream(data, file)
+  zip(file)
 })
 
 readerStream.on('error', function(error) {
@@ -37,4 +39,10 @@ function writeStream(data, file) {
   writerStream.on('error', function () {
     console.log('error')
   })
+}
+
+function zip(file) {
+  fs.createReadStream(file)
+    .pipe(zlib.createGzip())
+    .pipe(fs.createWriteStream(file + '.gz'))
 }
