@@ -1,24 +1,26 @@
 {
-  "name": "exia",
+  "name": "node-learning",
   "version": "1.0.0",
   "description": "a project with nodejs",
   "main": "index.js",
   "dependencies": {
     "formidable": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.16.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pickcle/exia.git"
+    "url": "git+https://github.com/Pickcle/node-learning.git"
   },
   "author": "xiaohj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Pickcle/exia/issues"
+    "url": "https://github.com/Pickcle/node-learning/issues"
   },
-  "homepage": "https://github.com/Pickcle/exia#readme"
+  "homepage": "https://github.com/Pickcle/node-learning#readme"
 }

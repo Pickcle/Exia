@@ -1,2 +1,2 @@
-# exia
+# node-learning
 a practice project of node which can upload and show image.
