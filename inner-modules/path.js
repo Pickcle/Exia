@@ -1,5 +1,9 @@
 var path = require('path')
 
+console.log(__dirname)
+
+console.log(path.dirname(path.join(__dirname, '../')))
+
 console.log(path.join('root', '/a', 'b'))
 // 将参数串联 => root/a/b
 

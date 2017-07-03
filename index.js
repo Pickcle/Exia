@@ -1,4 +1,6 @@
 var express = require('express')
+var fs = require('fs')
+var path = require('path')
 
 var app = express()
 
@@ -9,12 +11,17 @@ app.get('/', function (req, res) {
   res.send('get')
 })
 
-// app.post('/', function (req, res) {
-//   res.send('post')
-// })
+app.post('/file_upload', function (req, res) {
+  // console.log(req)
+  // fs.writeFileSync(__dirname + '/test.txt', 'test', function (err) {
+  //   err && console.log(err)
+  //   res.end('end')
+  // })
+})
 
 app.get('/del', function (req, res) {
-  res.send('del')
+  // log(req, res)
+  res.send('del' + JSON.stringify(req.query))
 })
 
 app.get('/list', function (req, res) {
@@ -31,19 +38,20 @@ var server = app.listen(5051, function () {
 })
 
 function log(req, res) {
-  console.log(req.app)
-  console.log(req.baseUrl)
-  console.log(req.originalUrl)
-  console.log(req.params)
-  console.log(req.path)
-  console.log(req.protocol)
-  console.log(req.query)
-  console.log(req.router)
-  console.log(req.subdomains)
-  console.log(req.accepts())
-  console.log(req.hostname)
   console.log('------')
-  console.log(res.app)
+  console.log('app:', req.app)
+  console.log('baseUrl:', req.baseUrl)
+  console.log('originalUrl:', req.originalUrl)
+  console.log('params:', req.params)
+  console.log('path:', req.path)
+  console.log('protocol:', req.protocol)
+  console.log('query:', req.query)
+  console.log('router:', req.router)
+  console.log('subdomains:', req.subdomains)
+  console.log('hostname:', req.hostname)
+  console.log('accept:', req.accepts())
+  console.log('------')
+  // console.log(res.app)
   // console.log(res.ap)
   // console.log()
   // console.log()
