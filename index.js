@@ -19,9 +19,9 @@ app.post('/file_upload', function (req, res) {
   // })
 })
 
-app.get('/del', function (req, res) {
-  // log(req, res)
-  res.send('del' + JSON.stringify(req.query))
+app.get('/:id', function (req, res) {
+  console.log(req.params)
+  res.send(req.params.id)
 })
 
 app.get('/list', function (req, res) {
