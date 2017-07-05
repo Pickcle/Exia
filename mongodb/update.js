@@ -5,10 +5,15 @@ MongoClient.connect(DB_CONN_STR, function (err, db) {
   console.log('connect succeeded')
   var collection = db.collection('user')
   var data = {
-    name: 'Pickcle',
-    age: 26
+    name: 'Pickcle'
   }
-  collection.insert(data, function (err, result) {
+  var newData = {
+    $set: {
+      name: 'Arki',
+      age: 25
+    }
+  }
+  collection.update(data, newData, {multi: true}, function (err, result) {
     if (err) {
       console.log('err: ', err)
       return
