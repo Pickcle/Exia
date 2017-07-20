@@ -25,3 +25,5 @@ fs.readdir()
 fs.rmdir()
 
 fs.rename()
+
+fs.existsSync('dist', function () {})
